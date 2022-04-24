@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
+contract simpleStorage {
+   uint256 favoriteNumber;
+   // Create your event and then emit function argument value in the function setting the state variable
+   event store(address indexed Number);
+
+   function storeNum(uint256 _favorite) public {
+      favoriteNumber = _favorite;
+    }
+    // state variable name should not be the same as local or function argument variables
+    // use returns with the type (and also name) to return the state varibale
+   function retrieve() public view returns(uint256) {
+       return favoriteNumber;
+    }    
+}
